@@ -1,17 +1,28 @@
 package com.example.designPattern;
 
+import java.util.Date;
+
 public class MainModel {
 
-    private String saveData;
+    private String name;
+    private Date birthday;
 
     public MainModel() {
     }
 
-    public void setData(String saveData) {
-        this.saveData = saveData;
+    public String getName() {
+        return name;
     }
 
-    public String getData() {
-        return saveData;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 }

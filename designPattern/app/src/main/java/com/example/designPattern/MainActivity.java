@@ -14,8 +14,7 @@ import java.util.Date;
 // View 관련 작업만
 public class MainActivity extends AppCompatActivity {
 
-    private String name;
-    private Date birthday;
+    private MainPresenter presenter;
 
     private EditText edtName, edtBirthday;
     private Button btnSave, btnLoad;
@@ -35,42 +34,21 @@ public class MainActivity extends AppCompatActivity {
         txtName = findViewById(R.id.txtName);
         txtBirthday = findViewById(R.id.txtBirthday);
 
-        btnSave.setOnClickListener(view -> {
-            name = getName();
-            birthday = toDate(getBirthday());
-        });
-        btnLoad.setOnClickListener(view -> {
-            showData(name, toString(birthday));
-        });
+        btnSave.setOnClickListener(view -> presenter.onClickBtnSave());
+        btnLoad.setOnClickListener(view -> presenter.onClickBtnLoad());
     }
 
     @NonNull
-    private String getBirthday() {
+    public String getBirthday() {
         return edtBirthday.getText().toString();
     }
 
-    private Date toDate(String date) {
-        try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-            return dateFormat.parse(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     @NonNull
-    private String toString(Date date) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
-        return dateFormat.format(date);
-    }
-
-    @NonNull
-    private String getName() {
+    public String getName() {
         return edtName.getText().toString();
     }
 
-    private void showData(String name, String birthday) {
+    public void showData(String name, String birthday) {
         txtName.setText(name);
         txtBirthday.setText(birthday);
     }
