@@ -8,11 +8,6 @@ public class MainPresenter {
     public MainPresenter(MainActivity view) {
         this.model = new MainModel();
         this.view = view;
-        init();
-    }
-
-    private void init() {
-        view
     }
 
 
