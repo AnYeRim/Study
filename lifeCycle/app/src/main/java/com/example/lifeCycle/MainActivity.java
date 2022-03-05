@@ -1,9 +1,8 @@
-package com.example.study;
+package com.example.lifeCycle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,26 +32,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDialog.setOnClickListener(this);
     }
 
-    private void showDialog(){
-        //대화상자 생성//
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-
-        builder.setTitle("제목입니다");            //setTitle -> 제목설정
-        builder.setMessage("내용입니다.");         //setMessage -> 내용입력
-        builder.setIcon(R.mipmap.ic_launcher);    //setIcon -> 아이콘 설정
-
-        //  setPositiveButton -> "OK"버튼  //
-        builder.setPositiveButton("확인", null);
-
-        //  setNegativeButton -> "Cancel" 버튼  //
-        builder.setNegativeButton("취소",null);
-
-        builder.show();      //대화상자(dialog)화면 출력
+    private void showDialog() {
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("제목입니다")
+                .setMessage("내용입니다.")
+                .setIcon(R.mipmap.ic_launcher)
+                .setPositiveButton("확인", null)
+                .setNegativeButton("취소", null).show();
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btnSubActivity:
                 Intent intent = new Intent(this, SubActivity.class);
                 startActivity(intent);

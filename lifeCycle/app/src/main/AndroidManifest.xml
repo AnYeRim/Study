@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.study">
+    package="com.example.lifeCycle">
 
     <application
         android:allowBackup="true"
@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyApp">
         <activity
-            android:name=".SubActivity"
+            android:name="com.example.lifeCycle.SubActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.lifeCycle.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
