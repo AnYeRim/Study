@@ -11,10 +11,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// Controller : view 일부 기능 + Controller 기능
 public class MainActivity extends AppCompatActivity {
 
-    private String name;
-    private Date birthday;
+    private MainModel model;
 
     private EditText edtName, edtBirthday;
     private Button btnSave, btnLoad;
@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        model = new MainModel();
+
         edtName = findViewById(R.id.edtName);
         edtBirthday = findViewById(R.id.edtBirthday);
         btnSave = findViewById(R.id.btnSave);
@@ -33,10 +35,16 @@ public class MainActivity extends AppCompatActivity {
         txtBirthday = findViewById(R.id.txtBirthday);
 
         btnSave.setOnClickListener(view -> {
-            name = getName();
-            birthday = toDate(getBirthday());
+            model.setName(getName());
+            model.setBirthday(toDate(getBirthday()));
         });
-        btnLoad.setOnClickListener(view -> showData(name, toString(birthday)));
+
+        btnLoad.setOnClickListener(view -> showData(model.getName(), toString(model.getBirthday())));
+    }
+
+    @NonNull
+    private String getName() {
+        return edtName.getText().toString();
     }
 
     @NonNull
@@ -58,11 +66,6 @@ public class MainActivity extends AppCompatActivity {
     private String toString(Date date) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
         return dateFormat.format(date);
-    }
-
-    @NonNull
-    private String getName() {
-        return edtName.getText().toString();
     }
 
     private void showData(String name, String birthday) {
