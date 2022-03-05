@@ -8,9 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+// View 관련 작업만
 public class MainActivity extends AppCompatActivity {
 
-    private String saveData;
+    private MainPresenter presenter;
 
     private EditText edtInput;
     private Button btnSave, btnLoad;
@@ -21,21 +22,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        presenter = new MainPresenter(this);
+
         edtInput = findViewById(R.id.edtInput);
         btnSave = findViewById(R.id.btnSave);
         btnLoad = findViewById(R.id.btnLoad);
         txtOutput = findViewById(R.id.txtOutput);
 
-        btnSave.setOnClickListener(view -> saveData = getInputData());
-        btnLoad.setOnClickListener(view -> showData(saveData));
+        btnSave.setOnClickListener(view -> presenter.onClickBtnSave());
+        btnLoad.setOnClickListener(view -> presenter.onClickBtnLoad());
     }
 
     @NonNull
-    private String getInputData() {
+    public String getInputData() {
         return edtInput.getText().toString();
     }
 
-    private void showData(String data) {
+    public void showData(String data) {
         txtOutput.setText(data);
     }
 
