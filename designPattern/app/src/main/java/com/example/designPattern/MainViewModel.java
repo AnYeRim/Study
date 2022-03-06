@@ -1,40 +1,50 @@
 package com.example.designPattern;
 
 import androidx.annotation.NonNull;
-import androidx.databinding.ObservableField;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 // Presenter
-public class MainViewModel {
+public class MainViewModel extends ViewModel {
 
     private MainModel model;
-    private MainActivity view;
 
-    public ObservableField<String> name;
-    public ObservableField<String> birthday;
+    private MutableLiveData<String> name, birthday;
 
-    public MainViewModel(MainActivity view) {
-        this.view = view;
-        init();
-    }
-
-    private void init() {
-        model = new MainModel();
-        name = new ObservableField<>("");
-        birthday = new ObservableField<>("");
-    }
-
-    public void onClickBtnSave() {
-        model.setName(view.getName());
-        model.setBirthday(toDate(view.getBirthday()));
+    public void onClickBtnSave(String name, String birthday) {
+        getModel().setName(name);
+        getModel().setBirthday(toDate(birthday));
     }
 
     public void onClickBtnLoad() {
-        name.set(model.getName());
-        birthday.set(toString(model.getBirthday()));
+        name.setValue(getModel().getName());
+        birthday.setValue(toString(getModel().getBirthday()));
+    }
+
+    public MainModel getModel() {
+        if(model == null){
+            model = new MainModel();
+        }
+        return model;
+    }
+
+    public LiveData<String> getName() {
+        if(name == null){
+            name = new MutableLiveData<>();
+        }
+        return name;
+    }
+
+    public LiveData<String> getBirthday() {
+        if(birthday == null){
+            birthday = new MutableLiveData<>();
+        }
+        return birthday;
     }
 
     private Date toDate(String date) {
