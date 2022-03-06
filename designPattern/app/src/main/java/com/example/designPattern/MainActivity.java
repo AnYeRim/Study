@@ -22,9 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel = new MainViewModel(this);
         binding.setViewModel(viewModel);
-
-        binding.btnSave.setOnClickListener(view -> viewModel.onClickBtnSave());
-        binding.btnLoad.setOnClickListener(view -> viewModel.onClickBtnLoad());
     }
 
     @NonNull
