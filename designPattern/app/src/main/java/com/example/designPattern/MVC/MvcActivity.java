@@ -1,22 +1,23 @@
-package com.example.designPattern;
+package com.example.designPattern.MVC;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.designPattern.R;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity {
+// Controller : view 일부 기능 + Controller 기능
+public class MvcActivity extends AppCompatActivity {
 
-    private String name;
-    private Date birthday;
+    private MvcModel model;
 
     private EditText edtName, edtBirthday;
     private Button btnSave, btnLoad;
@@ -25,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mvc);
+
+        model = new MvcModel();
 
         edtName = findViewById(R.id.edtName);
         edtBirthday = findViewById(R.id.edtBirthday);
@@ -35,12 +38,16 @@ public class MainActivity extends AppCompatActivity {
         txtBirthday = findViewById(R.id.txtBirthday);
 
         btnSave.setOnClickListener(view -> {
-            name = getName();
-            birthday = toDate(getBirthday());
+            model.setName(getName());
+            model.setBirthday(toDate(getBirthday()));
         });
-        btnLoad.setOnClickListener(view -> {
-            showData(name, toString(birthday));
-        });
+
+        btnLoad.setOnClickListener(view -> showData(model.getName(), toString(model.getBirthday())));
+    }
+
+    @NonNull
+    private String getName() {
+        return edtName.getText().toString();
     }
 
     @NonNull
@@ -62,11 +69,6 @@ public class MainActivity extends AppCompatActivity {
     private String toString(Date date) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
         return dateFormat.format(date);
-    }
-
-    @NonNull
-    private String getName() {
-        return edtName.getText().toString();
     }
 
     private void showData(String name, String birthday) {
