@@ -33,7 +33,8 @@ android {
 
 dependencies {
     def lifecycle_version = "2.5.0-alpha02"
-    
+    def archTestingVersion = '2.1.0'
+
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     // LiveData
@@ -45,4 +46,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    testImplementation "androidx.arch.core:core-testing:$archTestingVersion"
 }
