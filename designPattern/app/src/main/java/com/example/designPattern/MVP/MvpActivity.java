@@ -1,4 +1,4 @@
-package com.example.designPattern;
+package com.example.designPattern.MVP;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.designPattern.R;
 
 // View 관련 작업만
 public class MvpActivity extends AppCompatActivity {
