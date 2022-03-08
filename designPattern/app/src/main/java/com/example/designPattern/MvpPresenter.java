@@ -7,13 +7,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 // Presenter
-public class MainPresenter {
+public class MvpPresenter {
 
-    private MainModel model;
-    private MainActivity view;
+    private MvpModel model;
+    private MvpActivity view;
 
-    public MainPresenter(MainActivity view) {
-        this.model = new MainModel();
+    public MvpPresenter(MvpActivity view) {
+        this.model = new MvpModel();
         this.view = view;
     }
 

@@ -7,14 +7,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 // View 관련 작업만
-public class MainActivity extends AppCompatActivity {
+public class MvpActivity extends AppCompatActivity {
 
-    private MainPresenter presenter;
+    private MvpPresenter presenter;
 
     private EditText edtName, edtBirthday;
     private Button btnSave, btnLoad;
@@ -23,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mvp);
 
-        presenter = new MainPresenter(this);
+        presenter = new MvpPresenter(this);
 
         edtName = findViewById(R.id.edtName);
         edtBirthday = findViewById(R.id.edtBirthday);

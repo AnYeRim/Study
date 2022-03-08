@@ -2,12 +2,12 @@ package com.example.designPattern;
 
 import java.util.Date;
 
-public class MainModel {
+public class MvpModel {
 
     private String name;
     private Date birthday;
 
-    public MainModel() {
+    public MvpModel() {
     }
 
     public String getName() {
