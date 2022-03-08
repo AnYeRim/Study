@@ -13,12 +13,12 @@ public class MainViewModelTest {
     @Rule
     public InstantTaskExecutorRule rule = new InstantTaskExecutorRule();
 
-    MainViewModel viewModel;
+    MvvmViewModel viewModel;
 
     @Before
     public void setUp() {
         if (viewModel == null)
-            viewModel = new MainViewModel();
+            viewModel = new MvvmViewModel();
     }
 
     @Test

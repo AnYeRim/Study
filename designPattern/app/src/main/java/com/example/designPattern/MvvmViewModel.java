@@ -10,9 +10,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 // Presenter
-public class MainViewModel extends ViewModel {
+public class MvvmViewModel extends ViewModel {
 
-    private MainModel model;
+    private MvvmModel model;
 
     private MutableLiveData<String> name, birthday;
 
@@ -26,9 +26,9 @@ public class MainViewModel extends ViewModel {
         birthday.setValue(toString(getModel().getBirthday()));
     }
 
-    public MainModel getModel() {
+    public MvvmModel getModel() {
         if(model == null){
-            model = new MainModel();
+            model = new MvvmModel();
         }
         return model;
     }
