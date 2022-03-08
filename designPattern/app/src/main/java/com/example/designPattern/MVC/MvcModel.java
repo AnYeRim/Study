@@ -1,14 +1,14 @@
-package com.example.designPattern;
+package com.example.designPattern.MVC;
 
 import java.util.Date;
 
 // Model
-public class MainModel {
+public class MvcModel {
 
     private String name;
     private Date birthday;
 
-    public MainModel() {
+    public MvcModel() {
     }
 
     public String getName() {
