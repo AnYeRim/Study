@@ -10,11 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignPattern">
         <activity
-            android:name="com.example.designPattern.MvvmActivity"
+            android:name="com.example.designPattern.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
