@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignPattern">
         <activity
-            android:name="com.example.designPattern.MainActivity"
+            android:name="com.example.designPattern.MVC.MvcActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
