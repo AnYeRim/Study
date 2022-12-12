@@ -26,12 +26,28 @@ void printB(){
 	printf("num : %-10.2f\n", pie);
 }
 
+void scanA(){
+	int a, b;
+	int sum;
+
+	printf("a + b = sum\n 위에 들어갈 a, b를 입력해주세요");
+	scanf("%d %d", &a, &b);
+
+	sum = a + b;
+
+	printf("a + b = %d 입니다.\n", sum);
+}
+
 int main(){
 	printA();
 
 	printf("\n");
 	
 	printB();
+
+	printf("\n");
+
+	scanA();
 
 	return 0;
 }
