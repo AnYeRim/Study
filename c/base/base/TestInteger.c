@@ -16,3 +16,14 @@ void overflow()
      u=s-t;
      printf("%d-%d=%d\n",s,t,u);
 }
+
+void int64()
+{
+     __int64 a,b,c;
+
+     a=111111111;
+     b=111111111;
+     c=a*b;
+
+     printf("%I64d\n",c);
+}
