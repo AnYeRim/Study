@@ -1,7 +1,8 @@
-#include "TestInteger.h"
+#include "VariableType.h"
 
 int main()
 {
 	// overflow();
-	int64();
+	// int64();
+	printDouble();
 }
