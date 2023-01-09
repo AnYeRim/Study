@@ -15,9 +15,7 @@ bool getCheckBit(char nSrc, int nCheckbit) {
 	return bResult;
 }
 
-
-int _tmain(int argc, _TCHAR* argv[])
-{
+void testBit1(){
 	int nSrc = 0x61; // 1010 1111
 	// 0110 0001
  	//int nBit = 0x01 << 0x00; // 0000 0001
@@ -35,7 +33,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	bool bResult = getCheckBit(nSrc, nBit);
 
 	printf("result : check bit [%d] = %d\n", nBit, bResult? 1 : 0);
-	
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	testBit1();
 
 	system("pause");
 	return 0;
