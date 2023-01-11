@@ -37,3 +37,45 @@ void printDouble()
      printf("부동 소수점 : %e\n",d);
      printf("일반형 : %g\n",d);
 }
+
+void printChar1()
+{
+	char ch;
+    ch='A';
+
+	printf("정수일 때 %d, 문자일 때 %c\n", ch, ch);
+}
+
+void printChar2()
+{
+	char ch;
+	unsigned char uch;
+	int i;
+
+	for(i=-128; i<128; i++){
+		ch = i;
+		printf("정수일 때 %d, 문자일 때 %c\n", i, ch);
+	}
+
+	for(i=0; i<255; i=i++){
+		uch = i;
+		printf("정수일 때 %d, 문자일 때 %c\n", i, uch);
+	}
+}
+
+void printEnum()
+{
+     enum fruit {
+		 APPLE,
+		 ORANGE,
+		 BANANA
+	 } a1, a2, a3;
+
+	 enum fruit a4;
+	 
+	 a3 = APPLE;
+	 a4 = BANANA;
+
+	 printf("a3 = %d\n", a3);
+	 printf("a4 = %d\n", a4);
+}

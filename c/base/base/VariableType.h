@@ -4,5 +4,8 @@
 void	overflow();
 void	int64();
 void	printDouble();
+void	printChar1();
+void	printChar2();
+void	printEnum();
 
 #endif
