@@ -24,9 +24,15 @@
     <ClCompile Include="VariableType.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TestEnum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VariableType.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestEnum.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

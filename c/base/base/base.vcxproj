@@ -76,9 +76,11 @@
   <ItemGroup>
     <ClCompile Include="Main.c" />
     <ClCompile Include="Test.c" />
+    <ClCompile Include="TestEnum.c" />
     <ClCompile Include="VariableType.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TestEnum.h" />
     <ClInclude Include="VariableType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
