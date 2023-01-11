@@ -76,10 +76,10 @@
   <ItemGroup>
     <ClCompile Include="Main.c" />
     <ClCompile Include="Test.c" />
-    <ClCompile Include="TestInteger.c" />
+    <ClCompile Include="VariableType.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TestInteger.h" />
+    <ClInclude Include="VariableType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

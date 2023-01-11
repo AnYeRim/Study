@@ -21,12 +21,12 @@
     <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestInteger.c">
+    <ClCompile Include="VariableType.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TestInteger.h">
+    <ClInclude Include="VariableType.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
